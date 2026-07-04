@@ -7,31 +7,31 @@
 ```
 bulk_rnaseq/
 ├── config/
-│   ├── config.sh              # shell 脚本共用配置（路径、线程、参考基因组）
-│   └── samples.tsv            # 样本元数据（run_id, cell_line, time, treatment）
+│   ├── config.sh              # shell 脚本共用配置
+│   └── samples.tsv            # 样本元数据，包括run_id, cell_line, time, treatment
 ├── scripts/
 │   ├── 00_check_env.sh        # 环境检查
 │   ├── 01_fastqc.sh           # 原始数据质控
-│   ├── 02_fastp.sh            # 去接头 + 低质量修剪
+│   ├── 02_fastp.sh            # 去接头，低质量修剪
 │   ├── 03_multiqc.sh          # 汇总质控报告
 │   ├── 04_hisat2_index.sh     # 构建 HISAT2 索引
 │   ├── 05_hisat2_align.sh     # 比对到参考基因组
-│   ├── 06_featurecounts.sh    # 基因计数（featureCounts）
+│   ├── 06_featurecounts.sh    # 基因计数
 │   ├── 07_deseq2.R            # DESeq2 差异表达分析
 │   ├── 08_go.R                # GO 富集分析
 │   ├── 09_gsea.R              # GSEA 分析
 │   └── lib.sh                 # 公共 bash 函数库
 ├── env/
-│   └── conda_env.yaml         # conda 环境定义
+│   └── conda_env.yaml         # 环境配置
 ├── tests/
 │   └── data/
 │       ├── fastq/             # 测试用 FASTQ
 │       └── samples_test.tsv   # 测试用样本表
-├── data/                      # 输入数据（需自行准备）
+├── data/                      # 输入数据
 │   ├── raw_fastq/
 │   ├── trimmed_fastq/
-│   └── reference/             # 参考基因组 + HISAT2 索引
-├── results/                   # 输出（由脚本生成，不入 git）
+│   └── reference/             # 参考基因组，HISAT2索引
+├── results/                   # 输出结果
 │   ├── qc/
 │   ├── bam/
 │   ├── counts/
@@ -54,7 +54,7 @@ fastqc               multiqc
 - **比较组**：JQ1 vs DMSO，分 3h 和 24h 两个时间点
 - **参考基因组**：GRCh38, gencode v44 注释
 
-## 快速开始
+## 运行指南
 
 ### 1. 环境
 
@@ -94,11 +94,11 @@ Rscript scripts/08_go.R
 Rscript scripts/09_gsea.R
 ```
 
-> **测试**：可先用 `tests/data/samples_test.tsv` 替换 `config/samples.tsv` 跑通流程。
+> **测试**：可先用 `tests/data/samples_test.tsv` 测试是否可以跑通流程。
 
-### 4. 使用自己的数据
+### 4. 正式分析
 
-只需修改 `config/samples.tsv`（保持 5 列不变）：
+使用真实数据进行分析
 
 ```
 run_id	cell_line	time	treatment	fq
@@ -106,7 +106,7 @@ SRRxxx	SUM159	3h	DMSO	data/raw_fastq/SRRxxx.fastq.gz
 ...
 ```
 
-如果更换物种，修改 `config/config.sh` 中的 `GENOME_FA`、`GTF`、`HISAT2_INDEX`，以及 R 脚本中的 `org.Hs.eg.db` → 对应物种的 `org.*.eg.db`。
+如果更换物种，修改 `config/config.sh` 中的 `GENOME_FA`、`GTF`、`HISAT2_INDEX`，以及 R 脚本中的 `org.Hs.eg.db` ，改为对应物种的 `org.*.eg.db`。
 
 ## 输出
 
