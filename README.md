@@ -1,4 +1,4 @@
-# Bulk RNA-seq Pipeline — JQ1 vs DMSO (TNBC)
+# Bulk RNA-seq Pipeline — JQ1 vs DMSO 
 
 分析 JQ1（BET 抑制剂）处理 SUM159/SUM159R 三阴性乳腺癌细胞系后的转录组变化，时间点 3h 和 24h。
 
