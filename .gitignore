@@ -1,0 +1,13 @@
+*.rds
+*.fastq.gz
+*.fq.gz
+*.bam
+*.bai
+data/reference/
+data/raw_fastq/
+data/trimmed_fastq/
+results/
+logs/
+.Rproj.user/
+.Rhistory
+.RData

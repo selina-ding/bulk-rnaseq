@@ -1,0 +1,17 @@
+run_id	cell_line	time	treatment	fq
+SRR1661332	SUM159R	24h	DMSO	data/raw_fastq/SRR1661332.fastq.gz
+SRR1661333	SUM159R	24h	DMSO	data/raw_fastq/SRR1661333.fastq.gz
+SRR1661334	SUM159R	3h	DMSO	data/raw_fastq/SRR1661334.fastq.gz
+SRR1661335	SUM159R	3h	DMSO	data/raw_fastq/SRR1661335.fastq.gz
+SRR1661336	SUM159R	24h	JQ1	data/raw_fastq/SRR1661336.fastq.gz
+SRR1661337	SUM159R	24h	JQ1	data/raw_fastq/SRR1661337.fastq.gz
+SRR1661338	SUM159R	3h	JQ1	data/raw_fastq/SRR1661338.fastq.gz
+SRR1661339	SUM159R	3h	JQ1	data/raw_fastq/SRR1661339.fastq.gz
+SRR1661342	SUM159	24h	DMSO	data/raw_fastq/SRR1661342.fastq.gz
+SRR1661343	SUM159	24h	DMSO	data/raw_fastq/SRR1661343.fastq.gz
+SRR1661344	SUM159	3h	DMSO	data/raw_fastq/SRR1661344.fastq.gz
+SRR1661345	SUM159	3h	DMSO	data/raw_fastq/SRR1661345.fastq.gz
+SRR1661348	SUM159	24h	JQ1	data/raw_fastq/SRR1661348.fastq.gz
+SRR1661349	SUM159	24h	JQ1	data/raw_fastq/SRR1661349.fastq.gz
+SRR1661350	SUM159	3h 	JQ1	data/raw_fastq/SRR1661350.fastq.gz
+SRR1661351	SUM159	3h 	JQ1	data/raw_fastq/SRR1661351.fastq.gz

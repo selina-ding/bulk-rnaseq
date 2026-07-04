@@ -1,0 +1,57 @@
+name: tnbc-rnaseq
+
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+
+  # workflow
+  - snakemake
+
+  # download
+  - sra-tools
+
+  # QC
+  - fastqc
+  - multiqc
+
+  # trimming
+  - fastp
+
+  # alignment
+  - hisat2
+  - samtools
+
+  # quantification
+  - subread
+
+  # python
+  - python
+  - pandas
+  - numpy
+
+  # R
+  - r-base
+  - r-tidyverse
+  - r-pheatmap
+  - r-ggrepel
+
+  # DEG
+  - bioconductor-deseq2
+  - bioconductor-apeglm
+
+  # annotation
+  - bioconductor-org.hs.eg.db
+  - bioconductor-annotationdbi
+
+  # enrichment
+  - bioconductor-clusterprofiler
+  - bioconductor-fgsea
+
+  # volcano
+  - bioconductor-enhancedvolcano
+
+  # notebook
+  - jupyterlab

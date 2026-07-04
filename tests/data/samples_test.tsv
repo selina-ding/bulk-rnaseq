@@ -1,0 +1,3 @@
+run_id	cell_line	time	treatment	fq
+test_dmso	SUM159R	24h	DMSO	tests/data/fastq/test_dmso.fastq.gz
+test_jq1	SUM159R	24h	JQ1	tests/data/fastq/test_jq1.fastq.gz
