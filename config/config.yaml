@@ -1,0 +1,39 @@
+sample_table: config/samples_jq1.tsv
+run_name: jq1
+
+threads: 8
+mem_gb: 32
+
+# featureCounts strandedness:
+# 0 = unstranded, 1 = stranded, 2 = reversely stranded
+strandedness: 0
+
+hisat2:
+  threads: 2
+  sort_threads: 1
+  sort_memory: 768M
+
+reference:
+  genome_fa: data/reference/GRCh38.primary_assembly.genome.fa
+  gtf: data/reference/gencode.v44.annotation.gtf
+  hisat2_index_prefix: data/reference/hisat2_index/GRCh38
+
+directories:
+  raw_fastq: data/raw_fastq
+  trimmed_fastq: data/trimmed_fastq
+  qc: results/qc
+  bam: results/bam
+  counts: results/counts
+  deseq2: results/deseq2
+  go: results/go
+  gsea: results/gsea
+  metadata: results/metadata
+  logs: logs
+
+comparisons:
+  - name: 3h_JQ1_vs_DMSO
+    numerator_group: 3_JQ1
+    denominator_group: 3_DMSO
+  - name: 24h_JQ1_vs_DMSO
+    numerator_group: 24_JQ1
+    denominator_group: 24_DMSO
